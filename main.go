@@ -1,6 +1,10 @@
 package bars
 
-import "github.com/autotrend/entities"
+import (
+	"errors"
+
+	"github.com/autotrend/entities"
+)
 
 func BarsClose(bars []entities.Bar, period int) ([]float64, error) {
 
@@ -13,7 +17,7 @@ func BarsClose(bars []entities.Bar, period int) ([]float64, error) {
 		return closes, nil
 	}
 
-	return closes, nil
+	return closes, errors.New("Erro no BarsClose")
 
 }
 
@@ -28,7 +32,7 @@ func BarsOpen(bars []entities.Bar, period int) ([]float64, error) {
 		return opens, nil
 	}
 
-	return opens, nil
+	return opens, errors.New("Erro no BarsOpen")
 
 }
 
@@ -43,7 +47,7 @@ func BarsLow(bars []entities.Bar, period int) ([]float64, error) {
 		return lows, nil
 	}
 
-	return lows, nil
+	return lows, errors.New("Erro no BarsLow")
 
 }
 
@@ -58,6 +62,6 @@ func BarsHigh(bars []entities.Bar, period int) ([]float64, error) {
 		return highs, nil
 	}
 
-	return highs, nil
+	return highs, errors.New("Erro no BarsHigh")
 
 }
